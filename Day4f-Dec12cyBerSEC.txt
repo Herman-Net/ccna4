@@ -129,11 +129,11 @@ www.iptorrents.com
 config t
 NO ip access-list standard NOTORS
 ip access-list standard NOTORS
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
-DENY   __.__.__.__   0.0.255.255
+DENY   162.159.0.0   0.0.255.255
+DENY   104.21.0.0   0.0.255.255
+DENY   76.223.0.0   0.0.255.255
+DENY   162.159.0.0   0.0.255.255
+DENY    162.159.0.0  0.0.255.255
 Permit Any
 Int Gi 1
  ip access-group NOTORS in
@@ -300,7 +300,7 @@ tcp,udp,icmp,IP     Any      web310/11
 Config t
 service timestamps log datetime
 service timestamps debug datetime
-logging 10.m.1.10
+logging 10.32.1.10
 logging trap 5
 NO IP access-list Extended FWP1
 IP access-list Extended FWP1
@@ -471,11 +471,11 @@ show ntp associations
 GIVE IP ADDRESS TO LINUX BLDGONE AND BLDGTWO:
 sudo su
 bldg1:
-ifconfig eth0 192.168.103.11 netmask 255.255.255.0 up
-route add default gw 192.168.103.8
+sudo ifconfig eth0 192.168.103.21 netmask 255.255.255.0 up
+sudo route add default gw 192.168.103.11
 bldg2:
-ifconfig eth0 192.168.103.12 netmask 255.255.255.0 up
-route add default gw 192.168.103.8
+sudo ifconfig eth0 192.168.103.22 netmask 255.255.255.0 up
+sudo route add default gw 192.168.103.11
 ping 8.8.8.8   1.1.1.1  4.2.2.2  8.8.4.4
 
 TASK9: NAT: NETWORK ADDRESS TRANSLATION SERVICE:
